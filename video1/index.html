@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <div id="app">
+      <h1>{{titulo}}</h1>
+      <input type="text">
+      <ul>
+          <li v-for="fruta of frutas">
+              {{fruta.cantidad}} - {{fruta.nombre}}
+    <span v-if="fruta.cantidad === 0"> - Sin Stock</span>
+          </li>
+
+      </ul>
+  </div>
+   
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    const app = new Vue({
+el: '#app',
+data: {
+    titulo: 'Hola mundo con vue',
+    frutas: [
+        {nombre: 'Pera', cantidad: 10},
+        {nombre: 'Manzana', cantidad: 0},
+        {nombre: 'Platano', cantidad: 11},
+    ]
+    // frutas: ['Manzana', 'Pera', 'Platano']
+}
+    });
+    // probar desde la consola app.titulo = 'otro texto con vue'    darle enter
+    </script>
+</body>
+</html>

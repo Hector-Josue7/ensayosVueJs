@@ -9,14 +9,18 @@
 <body>
   <div id="app">
       <h1>{{titulo}}</h1>
-      <input type="text">
+      <input type="text" v-model="nuevaFruta" @keyup.enter="agregarFruta">
+      <button @click="agregarFruta">Agregar</button>
       <ul>
           <li v-for="fruta of frutas">
-              {{fruta.cantidad}} - {{fruta.nombre}}
+              <input type="number" v-model.number="fruta.cantidad">
+             {{fruta.nombre}}
+              <button @click="fruta.cantidad++">+</button>  <!-- fruta.cantidad = fruta.cantidad + 1-->
     <span v-if="fruta.cantidad === 0"> - Sin Stock</span>
           </li>
 
       </ul>
+      <h4>TOTAL: {{sumarFrutas}}</h4>
   </div>
    
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -29,10 +33,30 @@ data: {
         {nombre: 'Pera', cantidad: 10},
         {nombre: 'Manzana', cantidad: 0},
         {nombre: 'Platano', cantidad: 11},
-    ]
+    ],
+    nuevaFruta: '',
+    total: 0
     // frutas: ['Manzana', 'Pera', 'Platano']
+},
+methods: {
+    agregarFruta (){
+    this.frutas.push({
+     nombre: this.nuevaFruta, cantidad:0
+    });
+    this.nuevaFruta = '';
+    }
+},
+computed: {
+sumarFrutas(){
+this.total =0;
+for(fruta of this.frutas){
+    this.total = this.total + fruta.cantidad;  // toma el dato que vale 0 y le va a sumar lo que tenga cantidad
+}
+return this.total;
+}
 }
     });
+    // app.nuevaFruta
     // probar desde la consola app.titulo = 'otro texto con vue'    darle enter
     </script>
 </body>

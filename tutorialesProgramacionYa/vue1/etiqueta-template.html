@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- la etiqueta template es para condicionar que algun bloque de codigo html se muestre en pantlla o no se muestre -->
+    <div id="aplicacion">
+        <p>Ingrese un valor entre 1 y 100:
+        <input type="number" v-model="numero" min="1" max="100"></p>
+        <template v-if="numero==50">
+            <h1>Número 50</h1>
+            <p>Estamos en la mitad.</p>
+          </template>
+     <!-- <div v-show="numero==50">
+    <h1>Número 50</h1>
+    <p>Estamos en la mitad.</p>
+  </div> -->
+      </div>
+<!-- 1 -->
+      <!-- <div id="aplicacion">
+        <p>Ingrese la clave:
+          <input type="password" v-model="clave1">
+        </p>
+        <p>Repita la clave:
+          <input type="password" v-model="clave2">
+        </p>  
+        <p v-if="clave1===clave2">Las claves son iguales.</p>
+        <p v-else>Las claves son distintas.</p>
+      </div>
+     -->
+<!-- Directiva v-show
+Similar a la directiva v-if hace que la etiqueta HTML se muestre o no según el valor de la condición. 
+La diferencia es que la directiva v-show solo hace cambiar la propiedad CSS display por el valor none,
+ es decir sigue existiendo en el DOM de la página la etiqueta pero no está visible -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>   
+<script>
+    var app=new Vue({
+      el: '#aplicacion',
+      data:{ 
+        numero : 1
+      }
+    })
+  </script>
+<!-- 1 -->
+<!-- <script>  
+    var app=new Vue({
+      el: '#aplicacion',
+      data:{ 
+        clave1 : '',
+        clave2 : ''
+      }
+    })
+  </script> -->
+</body>
+</html>

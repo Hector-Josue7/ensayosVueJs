@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Document</title>
+</head>
+<body>
+    <div id="aplicacion">
+        <p>Ingrese una edad:
+        <input type="number" v-model="edad"></p>
+        <!-- <p v-if="edad>=18">Es mayor de edad.</p>   -->
+        <div v-if="edad>=18">
+            <p>un párrafo</p>
+            <p>otro párrafo</p>
+          </div>   
+      </div>
+<!-- este codigo de abajo es para clasificar un numero si tiene 1, 2 o mas cifras -->
+
+      <!-- <div id="aplicacion">
+        <p>Ingrese un valor entre 1 y 100:
+        <input type="number" v-model="numero" min="1" max="100"></p>
+        <p v-if="numero<=9">Tiene un dígito</p>
+        <p v-else-if="numero<=99">Tiene dos dígitos</p>
+        <p v-else>Tiene tres dígitos</p>
+      </div>
+       -->
+      <script src="https://cdn.jsdelivr.net/npm/vue"></script>   
+    
+      <script>
+        var app=new Vue({
+          el: '#aplicacion',
+          data:{ 
+            edad : 0
+            // numero : 1  probar este con el codigo html comentado
+          }
+        })
+      </script>
+</body>
+</html>

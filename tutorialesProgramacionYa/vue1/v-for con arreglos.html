@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="aplicacion">
+        <ul>
+          <li v-for="lenguaje in lenguajes">{{lenguaje}}</li>
+        </ul>
+      </div> -->
+   <div id="aplicacion">
+        <table border="1">
+          <template v-for="dia in dias">
+            <tr><td>{{dia}}</td></tr>
+          </template>
+        </table>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>   
+      <script>
+        var app=new Vue({
+          el: '#aplicacion',
+          data:{ 
+            // lenguajes: ['C', 'C++', 'C#', 'Java', 'Ruby', 'Kotlin']
+            dias: ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo']
+          }
+        })
+      </script>
+</body>
+</html>

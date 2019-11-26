@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+  <title>Prueba Vue</title> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+  <!-- <div id="aplicacion">
+    <table border="1">
+      <tr><td>Código</td><td>Descripción</td><td>Precio</td></tr>
+      <template v-for="articulo in articulos">
+        <tr>
+          <td>{{articulo.codigo}}</td>
+          <td>{{articulo.descripcion}}</td>
+          <td>{{articulo.precio}}</td>
+        </tr>
+      </template>
+    </table>
+  </div> -->
+ <div id="aplicacion">
+    <ul>
+      <template v-for="persona in personas">
+        <li>
+          {{persona.nombre}}
+          <span v-if="persona.edad>=18">(Mayor)</span>
+          <span v-else>(Menor)</span>
+        </li>
+      </template>
+    </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>   
+  <!-- <script>
+    var app=new Vue({
+      el: '#aplicacion',
+      data:{ 
+        articulos: [{
+                    codigo: 1, 
+                    descripcion: 'papas',
+                    precio: 12.52
+                   },{
+                    codigo: 2, 
+                    descripcion: 'naranjas',
+                    precio: 21
+                   },{
+                    codigo: 3, 
+                    descripcion: 'peras',
+                    precio: 18.20
+                   }]
+
+      }
+    })
+  </script> -->
+
+
+  <script>
+    var app=new Vue({
+      el: '#aplicacion',
+      data:{ 
+        personas: [{
+                    nombre: 'Jose', 
+                    edad: 12
+                   },{
+                    nombre: 'Ana', 
+                    edad: 43
+                   },{
+                    nombre: 'Pedro', 
+                    edad: 4
+                   },{
+                    nombre: 'María', 
+                    edad: 12
+                   }]
+
+      }
+    })
+  </script>
+</body>
+</html>
